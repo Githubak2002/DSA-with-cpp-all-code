@@ -23,26 +23,33 @@ void printarr(vector<int>arr){
 }
 
 vector<int> plusOne(vector<int>& digits) {
-    // int x = digits.size();
-    // cout<<"Last digit is "<<x<<endl; //3
     vector <int> temp;
-    for(int i = digits.size()-1; i>=0;i--){
-        if(digits[i] == 9){
+    int i = digits.size()-1,carry = 0,con = 0;
+
+    for(i; i>=0;i--){
+        if(digits[i] == 9 ){
+            carry = 1;
             temp.insert(temp.begin(),0);
         }
+        else if(digits[i] != 9 && con == 0){
+            // cout<<"i = "<<i<<"\n";
+            temp.insert(temp.begin(),digits[i]+1);
+            con=1;
+        }
+        else
+            temp.insert(temp.begin(),digits[i]);
     }
-        
+    if(con == 0)
+        temp.insert(temp.begin(),1);
 
-        cout<<"\n\n";
-    printarr(digits);
-    return digits;     
+    return temp;     
 }
 
 
 
 
 int main(){
-    vector<int> arr = {1,2,3};
+    vector<int> arr = {9,9,9};
     // vector<int> res = findDuplicates(arr);
     // vector<int> temp = {0,4,5};
     // cout<<temp.max_size();
