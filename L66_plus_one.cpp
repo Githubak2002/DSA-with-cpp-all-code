@@ -22,24 +22,51 @@ void printarr(vector<int>arr){
     cout<<"\n";
 }
 
+// vector<int> plusOne(vector<int>& digits) {
+//     vector <int> temp;
+//     int i = digits.size()-1,carry = 0,con = 0;
+
+//     for(i; i>=0;i--){
+//         if(digits[i] == 9 ){
+//             carry = 1;
+//             temp.insert(temp.begin(),0);
+//         }
+//         else if(digits[i] != 9 && con == 0){
+//             // cout<<"i = "<<i<<"\n";
+//             temp.insert(temp.begin(),digits[i]+1);
+//             con=1;
+//         }
+//         else
+//             temp.insert(temp.begin(),digits[i]);
+//     }
+//     if(con == 0)
+//         temp.insert(temp.begin(),1);
+
+//     return temp;     
+// }
+
+
 vector<int> plusOne(vector<int>& digits) {
     vector <int> temp;
-    int i = digits.size()-1,carry = 0,con = 0;
+    int i,carry = 0,con = 0;
 
-    for(i; i>=0;i--){
-        if(digits[i] == 9 ){
+    for(i = digits.size()-1; i>=0;i--){
+        if(digits[i] == 9 && con == 0){
             carry = 1;
             temp.insert(temp.begin(),0);
         }
-        else if(digits[i] != 9 && con == 0){
-            // cout<<"i = "<<i<<"\n";
+        else if( (digits[i]!=9 && con == 0) || carry == 1){
             temp.insert(temp.begin(),digits[i]+1);
-            con=1;
+            carry = 0;
+            con = 1;
         }
-        else
+        else{
             temp.insert(temp.begin(),digits[i]);
+            // cout<<"i = "<<i<<" digits[i] = "<<digits[i];
+        }
     }
-    if(con == 0)
+
+    if(temp[0] == 0)            // working for 999 -> 1000
         temp.insert(temp.begin(),1);
 
     return temp;     
@@ -49,12 +76,13 @@ vector<int> plusOne(vector<int>& digits) {
 
 
 int main(){
-    vector<int> arr = {9,9,9};
+    vector<int> arr = {9,8,8};
     // vector<int> res = findDuplicates(arr);
     // vector<int> temp = {0,4,5};
     // cout<<temp.max_size();
     
     // printarr(arr);
+    cout<<"\n\nresult\n";
     vector <int> a = plusOne(arr);
     printarr(a);
     

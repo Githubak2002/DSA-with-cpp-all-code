@@ -17,7 +17,7 @@ int main() {
     v1.push_back(2);
     v1.push_back(3);
     
-    // ----- itrator ----- is an obj used to traverse vector,arr,list...
+    // ----- itrator ----- is an obhigh used to traverse vector,arr,list...
 
     // cout<<"\nUsing ITRATOR\n";
     // vector<int>::iterator it;

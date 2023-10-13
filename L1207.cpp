@@ -14,7 +14,7 @@ using namespace std;
     bool uniqueOccurrences(vector<int>& arr) {
             sort(arr.begin(),arr.end());
             vector<int> ans;
-            int count = 1,j=0;
+            int count = 1,high=0;
             for (int i=0 ; i < arr.size()-1; i++){ 
                 if(arr[i]==arr[i+1]){
                     count++;
