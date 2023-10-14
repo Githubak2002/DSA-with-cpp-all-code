@@ -2,42 +2,28 @@
 
 #include<iostream>
 using namespace std;
+
 int findsum(int n){
     int r,sum=0;
-    do{
+    while(n!=0){
         r = n % 10;
         sum = sum + r;
         n = n/10;
-    }while(n/10 != 0);
+    }
     return sum;
 }
+
 int addDigits(int num){
-    int r,sum = 0,temp = -1;
-
-
-    cout<<"sum is from fun "<<findsum(num);
-
-    //  do{
-    //     r = num % 10;
-    //     sum = sum + r;
-    //     num = num/10;
-    // }while(num != 0);
-
-    // if(sum/10 != 0)
-    //     addDigits(sum);
-    // }while(sum/10 != 0);
-       
-    // num = sum;
-    // }while(num/10 != 0);
-       
-    // cout<<"\nSum = "<<sum<<"\n";
-    
-    // cout<<"num/10 = "<<num/10<<endl;
-    // cout<<"num%10 = "<<num%10<<endl;
-    return 0;
+    int sum;
+    sum = findsum(num);
+    while(sum>=10){
+        sum = findsum(sum);
+    }
+    return sum;
 }
 
 int main(){
-    cout<<"Function Output 2? = "<<addDigits(38);
+    // cout<<"Sum of the digits "<<findsum(2);
+    cout<<"The final single digit no is = "<<addDigits(88);
     return 0;
 }
