@@ -1,4 +1,4 @@
-/*26. Remove Duplicates from Sorted Array
+/*26. Remove Duplicates from Sorted Array - worked but with 50% average complexity
 
 Example 2:
 
@@ -25,17 +25,31 @@ int removeDuplicates(vector<int>& nums){
         }
 
     }
-    nums[nums.size()-1];
+    nums[k] = nums[nums.size()-1];
     
 
-    return k;  
+    return k+1;  
 }
 
 int main(){
-    vector<int> a = {0,0,1,1,1,2,2,3,3,4};
+    // vector<int> a = {0,0,1,1,1,2,2,3,3,4};
+    // vector<int> a = {1,1,2};
+    vector<int> a = {0,1,2,2,2,2,3,4,4,5,6,7,7,7,8};
     cout<<"k = "<<removeDuplicates(a)<<endl; 
     for (int i = 0; i < a.size(); i++)
         cout<<a[i]<<" ";
     
     return 0;
 }
+
+/* fisible solution - not mine
+int j = 1;
+        for(int i = 1; i < nums.size(); i++){
+            if(nums[i] != nums[i - 1]){
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+*/
