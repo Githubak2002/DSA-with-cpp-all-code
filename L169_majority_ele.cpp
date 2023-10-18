@@ -11,15 +11,15 @@ Output: 3
 
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 int majorityElement(vector<int>& nums) {
-    cout<<"ele of arr are\n";
-    for (int i = 0; i < nums.size(); i++){
-        cout<<nums[i]<<" ";
-    }cout<<"\n";
-    
-}
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        return nums[n/2];
+    }
 int main(){
     vector<int> arr = {3,2,3};
+    cout<<"majority ele in arr after sort = "<<majorityElement(arr);
     return 0;
 }
