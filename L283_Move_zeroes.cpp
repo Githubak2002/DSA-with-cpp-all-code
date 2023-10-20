@@ -10,12 +10,7 @@ Output: [1,3,12,0,0]
 #include<algorithm>
 using namespace std;
 
-void sortArr(vector<int>& arr){
-    sort(arr.begin(),arr.end());
-    cout<<"sorted arr is\n";
-    for (int i = 0; i < arr.size(); i++)
-        cout<<arr[i]<<" ";
-}
+// sort(a[4],a[3]);   in algorithm header file
 
 void printarray(vector<int> arr){
     for (int i = 0; i < arr.size(); i++)
@@ -25,6 +20,7 @@ void printarray(vector<int> arr){
     
 }
 
+// My code working but time and space consuming
 void moveZeroes(vector<int>& nums) {
     int x = nums.size(),nonzeroindex;
     for (int i = 0; i < nums.size()-1; i++){
@@ -49,26 +45,6 @@ void moveZeroes(vector<int>& nums) {
     }  
 }  
 
-/*  //sequence hi nahi ban raha    
-void moveZeroes(vector<int>& nums) {
-    int start = 0,end = nums.size()-1;
-    while(start<end){
-        while(nums[end] == 0){
-            end -= 1;
-        }
-        while(nums[start] != 0){
-            start += 1;
-        }
-        if(start<end)
-        {
-            int t = nums[start];
-            nums[start] = nums[end];
-            nums[end] = t;
-        }
-
-    }
-
-}*/   
 
 int main(){
     // vector<int> arr = {0,1,0,3,12};
