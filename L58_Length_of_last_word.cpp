@@ -11,24 +11,30 @@ Explanation: The last word is "World" with length 5.
 */
 
 #include <iostream>
-#include <string.h>
+#include <cstring>
 using namespace std;
-
+size_t charArrayLength(const char* arr) {
+    size_t length = 0;
+    while (arr[length] != '\0') {
+        length++;
+    }
+    return length;
+}
 int main() {
-    string s = "Hello    three spaces   ";
+    string s = "Hello   three   ";
 
-    // Allocate a char array with space for the string characters + 1 for null-terminator
     char charArray[s.length() + 1];
 
     // Copy string characters to char array
     strcpy(charArray, s.c_str());
+    size_t l = charArrayLength(charArray);  
+    size_t length = strlen(charArray);
+ 
+    cout << "Char array: " << charArray << endl;
+    // cout << "Char array[] = " << charArray[20] << endl;
+    cout << "Char array[] = " << length << endl;
 
-    // Print the char array
-    std::cout << "Char array: ";
-    for (size_t i = 0; i < strlen(charArray); ++i) {
-        std::cout << charArray[i];
-    }
-    std::cout << std::endl;
+    return 0;
 
     return 0;
 }
