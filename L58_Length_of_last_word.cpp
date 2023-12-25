@@ -27,16 +27,21 @@ int lengthOfLastWord(string s) {
     strcpy(charArray, s.c_str());
     // size_t l = charArrayLength(charArray);  
     size_t length = strlen(charArray);
+    cout<<"lingth = "<<length<<endl;
     int letters = 0;
+    int hlp = 0;
     for (int i = length-1; i >= 0; i--){
         if(charArray[i] == ' '){
+            if(hlp == 1)
+                return letters;
             continue;
         }
         if(charArray[i] != ' '){
+            hlp = 1;
             cout<<charArray[i]<<endl;
             ++letters;
-            if(charArray[i-1] == ' ')
-                return letters; 
+            // if(charArray[i-1] == ' ')
+            //     return letters; 
         }
     }
     return letters;
@@ -60,7 +65,7 @@ int lettersFun (char a[], int length){
 }
 
 int main() {
-    string s = "   fine";
+    string s = "    a  k ";
     cout<<"No of letters are = "<<lengthOfLastWord(s);
 
 
