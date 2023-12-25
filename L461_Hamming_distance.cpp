@@ -1,6 +1,6 @@
 /* 461. Hamming Distance
 
-Example 1:
+Example 1 -
 
 Input: x = 1, y = 4
 Output: 2
@@ -38,7 +38,7 @@ int main(){
     int res = n1 ^ n2;
     cout<<"BIT manipulation of n1 ^ n2 = "<< res;
 
-    cout<<"\n===Hamming Distance===\n";
+    cout<<"\n === Hamming Distance  === \n";
     int hd = 0,temp = res;
     while(temp/2 != 0){
       cout<<temp<<endl;
