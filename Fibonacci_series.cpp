@@ -8,18 +8,21 @@ int main(){
   cout<<"\n\n==============\n";
   cout<<"enter n : ";
   int n,i=0,j=1,no=2,x = 0;
+
+  unsigned uns = 3;
+  cout<<"\nunsigned 3 = "<<uns;
   cin>>n;
 
   cout<<"\nFibonacci series\n";
   if(n >= 1){
-    cout<<0<<endl;
+    cout<<0<<" ";
   }
   if(n >= 2){
-    cout<<1<<endl;
+    cout<<1<<" ";
   }
   while(no<n){
     x = i+j;
-    cout<<x<<endl;
+    cout<<x<<" ";
     ++no;
     i = j;
     j = x;
