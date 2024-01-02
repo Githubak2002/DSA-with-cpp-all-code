@@ -14,7 +14,7 @@ void printArr(vector<int> arr){
   cout<<endl;
 }
 
-void sort01(vector<int> arr){
+vector<int> sort01(vector<int> arr){
   cout<<"sort\n";
   int i = 0, j = arr.size()-1;
   while(i<j){
@@ -28,9 +28,9 @@ void sort01(vector<int> arr){
       i++;
       j--;
     }
-    printArr(arr);
-    
+    // printArr(arr);
   }
+  return arr;
 }
 
 
@@ -41,9 +41,8 @@ int main(){
 
   vector<int> arr = {1,1,0,0,1,0,1};
   printArr(arr);
-
-  sort01(arr);
-  printArr(arr);
+  vector<int> ans = sort01(arr);
+  printArr(ans);
 
   return 0;
 }
