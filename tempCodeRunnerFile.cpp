@@ -1,4 +1,4 @@
-t i = 0; i < nums.size(); i++){
-    //     int index = nums[i];
-    //     res[index] = true;
-    // }
+if( (mid*mid)>x ){
+  //   // cout<<endl<<mid-1<<endl;
+  //   return mid-1;
+  // }
