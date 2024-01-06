@@ -1,8 +1,15 @@
 // 263. Ugly Number
 
 #include<iostream>
-#include<algorithm>
+#include<vector>
+// #include<algorithm>
 using namespace std;
+
+void printarray(vector<int> arr){
+  for (int i = 0; i < arr.size(); i++)
+    cout<<arr[i]<<" ";    
+  cout<<endl;   
+}
 
 int main(){
   cout<<"\n\n==============\n";
@@ -10,18 +17,6 @@ int main(){
 }
 
 
-// #include<iostream>
-// #include<vector>
-// #include<algorithm>
-// using namespace std;
-
-void printarray(vector<int> arr){
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-    
-}
 
 // int main(){
     

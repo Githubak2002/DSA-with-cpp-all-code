@@ -1,8 +1,7 @@
-// INSERTION SORT
+// INSERTION SORT - 
 
 #include<iostream>
 #include<vector>
-// #include<algorithm>
 using namespace std;
 
 void printarray(vector<int> arr){
@@ -12,22 +11,27 @@ void printarray(vector<int> arr){
   cout<<endl;
 }
 
-void insertionSort(vector<int> &arr){
+// INSERTION SORT - pass by value - O(n^2) complexity
+void insertionSort(vector<int> arr){
   for (int i = 1; i < arr.size(); i++){
     for (int j = i; j > 0; j--){
-      if(arr[j-1] > arr[j])
+      if(arr[j-1] > arr[j]){
         swap(arr[j-1],arr[j]);
+      }
+      else
+        break;
     } 
   }
-  // printarray(arr);
+  cout<<"After INSERTION Sort"<<endl;
+  printarray(arr);
 }
 
 int main(){
-  cout<<"\n\n==============\n";
+  cout<<"\n======================\n";
   vector<int> arr = {3,6,5,2,8,1};
+  cout<<"Array is"<<endl;
   printarray(arr);
   insertionSort(arr);
-  printarray(arr);
 
   return 0;
 }
