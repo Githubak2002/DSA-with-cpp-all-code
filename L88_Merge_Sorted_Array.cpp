@@ -51,8 +51,6 @@ int main(){
   vector<int>arr1 = {1,3,5,0,0,0};
   vector<int>arr2 = {2,4,6};
 
-  // vector<int> res(arr1);
-  // printarray(res);
   merge(arr1,3,arr2,3);
   
   return 0;
