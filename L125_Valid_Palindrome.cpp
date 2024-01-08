@@ -3,6 +3,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<istream>
 using namespace std;
 
 // print array ele
@@ -60,12 +61,21 @@ int main(){
   string s4 = "RaCE is11s;i ECAR";
   string s5 = "0P";
   string empty_s = " ";
-  // cout<<"String to lower case = "<<lowerCaseFun(s5)<<endl;
+  cout<<"String to lower case = "<<lowerCaseFun(s5)<<endl;
   cout<<"String s = "<<s5<<endl;
   cout<<"Is string palindrom = "<<isPalindrome(s5)<<endl;
 
   // cout<<"String length =  "<<s.length()<<endl;
   // cout<<"First=  "<<s[0]<<endl;
   // cout<<"Last =  "<<s[s.length()-1]<<endl;
+
+
+
+
+  // string str;
+  // cout<<"enter a string"<<endl;
+  // getline(cin,str);
+  // cout<<"String = "<<str;
+
   return 0;
 }

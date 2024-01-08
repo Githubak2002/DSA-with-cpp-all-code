@@ -6,10 +6,10 @@
 using namespace std;
 
 int main(){
-  cout<<"\n\n==============\n";
-  // cout<<"Upper case"<<endl;
-  char ch = 'Z';
-  cout<<"LowerCase of "<<ch<<" is = "<<toLowerCaseFun(ch);
+  cout << "\n\n=======================\n\n";
+
+
+  cout << "\n=======================";
   return 0;
 }
 
@@ -28,7 +28,7 @@ char toLowerCaseFun(char ch){
 }
 
 
-// int main(){
-    
-//     return 0;
-// }
+// string str;
+// cout<<"enter a string"<<endl;
+// getline(cin,str);
+// cout<<"String = "<<str;
