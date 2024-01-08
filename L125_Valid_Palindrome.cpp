@@ -60,9 +60,9 @@ int main(){
   string s4 = "RaCE is11s;i ECAR";
   string s5 = "0P";
   string empty_s = " ";
-  cout<<"String to lower case = "<<lowerCaseFun1(s5)<<endl;
+  // cout<<"String to lower case = "<<lowerCaseFun(s5)<<endl;
   cout<<"String s = "<<s5<<endl;
-  cout<<"Is string palindrom = "<<isPalindrome1(s5)<<endl;
+  cout<<"Is string palindrom = "<<isPalindrome(s5)<<endl;
 
   // cout<<"String length =  "<<s.length()<<endl;
   // cout<<"First=  "<<s[0]<<endl;
