@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-// my code
+// my code --- TLE - time limit exceeds 
 string removeDuplicates1(string s)
 {
   int hlp = 1, len;
@@ -32,38 +32,30 @@ string removeDuplicates(string s)
 {
   string temp = "";
   int i = 0;
-
-  while (i < s.length())
-  {
+  while (i < s.length()){
     if (temp.empty() || s[i] != temp.back())
       temp.push_back(s[i]);
     else
       temp.pop_back();
     i++;
   }
-
   return temp;
 }
 
-// TRY once more-------
+// TRY once more------- and CORRECT 100% ---
 string removeDuplicates2(string s)
 {
-
-  string temp = "";
-
-  int i = 0;
-  while (i < s.length() - 1)
+  string temp = "";  int i = 0;
+  while (i < s.length())
   {
-    if (s[i] == s[i + 1])
-    {
-      i++;
-    }
-    else
-    {
+    if (temp.empty() || temp.back() != s[i])
       temp.push_back(s[i]);
-      i++;
-    }
+    else if(temp.back() == s[i])
+      temp.pop_back();
+    i++;
   }
+  s = temp;
+  return s;
 }
 
 int main()
@@ -71,9 +63,15 @@ int main()
   cout << "\n\n=======================\n\n";
 
   string str = "abbaca";
-  cout << "Res string = " << removeDuplicates(str);
+  string str1 = "abcffggvvc";
+  cout << "Res string = " << removeDuplicates(str)<<endl;
+  cout << "Res string = " << removeDuplicates2(str1)<<endl;
 
+  // string str = "abbaca";
   // cout<<"erase = "<<str.erase(1,2);     // aaca
+
+  cout<<"empty ? = "<<str.empty()<<endl;   // 0
+  cout<<"string last char = "<<str.back()<<endl;  // a 
 
   cout << "\n\n=======================";
   return 0;
