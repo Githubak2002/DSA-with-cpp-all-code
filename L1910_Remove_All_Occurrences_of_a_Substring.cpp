@@ -62,6 +62,6 @@ int main()
   else
     cout << "Substring not found" << endl;
   */
-  cout << "\n=======================";
+  cout << "\n\n=======================";
   return 0;
 }
