@@ -13,11 +13,16 @@ int main(){
   return 0;
 }
 
-
+// print arr ele
 void printarray(vector<int> arr){
   for (int i = 0; i < arr.size(); i++)
     cout<<arr[i]<<" ";    
   cout<<endl;   
+}
+
+// print 2D arr ele
+void print2Darr(vector<vector<int>> arr){
+  
 }
 
 char toLowerCaseFun(char ch){
