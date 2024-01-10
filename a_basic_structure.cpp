@@ -22,7 +22,15 @@ void printarray(vector<int> arr){
 
 // print 2D arr ele
 void print2Darr(vector<vector<int>> arr){
-  
+  int rows = arr.size(),cols = arr[0].size();
+  for (int row = 0; row < rows; row++)
+  {
+    for (int col = 0; col < cols; col++)
+    {
+      cout<<arr[row][col]<<" ";
+    }
+    cout<<endl;
+  }
 }
 
 char toLowerCaseFun(char ch){
