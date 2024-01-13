@@ -2,20 +2,17 @@
 
 #include<iostream>
 #include<vector>
-#include<algorithm>
+// #include<algorithm>
 using namespace std;
 
 int main(){
   cout << "\n\n=======================\n\n";
-  vector<int> a, arr = {2,2,0,1,0,1};
 
-  sort(arr.begin(), arr.end());
-
-  // a = sort(arr[0],arr.size()-1);
-  // arr.sort(arr[0],arr[arr.size()-1]);
   cout << "\n\n=======================";
   return 0;
 }
+
+// sort(arr.begin(), arr.end());
 
 // print arr ele
 void printarray(vector<int> arr){
