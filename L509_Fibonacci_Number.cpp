@@ -5,7 +5,29 @@
 // #include<algorithm>
 using namespace std;
 
-int fib(int n)
+int topDownSolve(int n, vector<int>& dp)
+{
+    if (n <= 1)
+        return n;
+
+    // step3 : check whether 'n' is already computed or not
+    if(dp[n] != -1)
+        return dp[n];
+
+    // step 2 : store and return in context of dp
+    dp[n] = topDownSolve(n - 1, dp) + topDownSolve(n - 2, dp);
+    return dp[n];
+}
+
+int fib(int n) {
+
+    // step 1 : Create a dp array
+    vector<int> dp(n+1, -1);
+    return topDownSolve(n, dp);
+}
+// ============
+
+int fib1(int n)
 {
   if (n == 0)
     return 0;
