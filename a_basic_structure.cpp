@@ -7,7 +7,12 @@ using namespace std;
 
 int main(){
   cout << "\n\n=======================\n\n";
- 
+  int sum = 0;
+  int n = 555;
+  for(int i = 1;i<=n;i++)
+    sum = sum + i;
+  cout<<"sum = "<<sum;
+  
   cout << "\n\n=======================";
   return 0;
 }
