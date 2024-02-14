@@ -1,4 +1,5 @@
 // BASICS of LINKED LIST - Single linked list
+// NOTE - no implimentation of tail and what if the head == NULL
 
 #include <iostream>
 #include <math.h>
@@ -27,7 +28,7 @@ public:
 
 };
 
-// INSERTION no implimentation of tail
+// INSERTION 
 void printLL(node *head)
 {  
     node *temp;
@@ -67,7 +68,6 @@ void insertAtPosition(int newdata, node *&head, int position)
     node *newNode = new node(newdata);
     node *temp = head;
     int initialpos = 1;
-    node *nextPos;
 
     while (initialpos < position - 1)
     {

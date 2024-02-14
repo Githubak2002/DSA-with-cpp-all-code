@@ -1,88 +1,92 @@
-// 
+// Doubly LL - Deletion remaning
+// with no implimentation of tail/end node
 
 #include <iostream>
 #include <math.h>
 using namespace std;
 
-class myclass{
-  public: 
-  int age = 22;
-  char favVhar = 'A';
-
-  myclass(){
-    cout<<"1st Constructor called\n";
-  }
-  ~myclass(){
-    cout<<"~Destructor of 1st\n";
-  }
-};
-
-class class2{
-  public: 
-  int age;
-  char favVhar = 'F';
-
-  class2(){
-    cout<<"\n2nd Constructor called\n";
-  }
-  ~class2(){
-    cout<<"~2nd Destructor called \n";
-    cout<<"Age is -> "<<this->age<<endl;
-  }
-};
-
-
 class node
 {
 public:
     int data;
-    node *next;
+    node *next, *prev;
+
     // constructor
     node(int data)
     {
+        this->prev = NULL;
         this->data = data;
         this->next = NULL;
     }
     // destructor
-    ~node(){
+    ~node()
+    {
         int value = this->data;
-        if(this->next != NULL){
+        if (this->next != NULL)
+        {
             delete next;
             this->next = NULL;
         }
-        cout<<"Memory if free for node with data = "<<value<<endl;
+        cout << "Memory if free for node with data = " << value << endl;
     }
 };
 
-/*
-// INSERTION no implimentation of tail
-void printLL(node *head)
-{  
+// INSERTION 
+void printDll(node *head)
+{
+    if(head == NULL)
+        cout<<"Linked list is empty\n";
+    else
+    {
     node *temp;
     temp = head;
-    while (temp->next != NULL)
+    while (temp != NULL)
     {
         cout << temp->data << "->";
         temp = temp->next;
     }
-    cout << temp->data << "->"<< "NULL" << endl;
+    cout << "NULL" << endl;
+    }
+}
+
+void lengthDll(node *&head)
+{
+    int len = 0;
+    node *temp = head;
+    while (temp != NULL)
+    {
+        temp = temp->next;
+        len++;
+    }
+    cout << "Length of DLL = " << len << endl;
 }
 
 void insertAtBeg(int newdata, node *&head)
 {
-    node *temp = new node(newdata);
-    temp->next = head;
-    head = temp;
+    node *newNode = new node(newdata);
+    if(head == NULL)
+        head = newNode;
+    else{
+    // cout<<"Inserting "<<newdata<<" at the start\n";
+    head->prev = newNode;
+    newNode->next = head;
+    head = newNode;
+    }
 }
 
 void insertAtEnd(int newdata, node *&head)
 {
     node *newNode = new node(newdata);
+    if(head == NULL)
+        head = newNode;
+    else{
+    // cout<<"Inserting "<<newdata<<" at the end\n";
     node *tailNode = head;
     while (tailNode->next != NULL)
         tailNode = tailNode->next;
-    cout << "\nTail node data " << tailNode->data << endl;
     tailNode->next = newNode;
+    newNode->prev = tailNode;
+    }
 }
 
 void insertAtPosition(int newdata, node *&head, int position)
@@ -95,18 +99,22 @@ void insertAtPosition(int newdata, node *&head, int position)
     node *newNode = new node(newdata);
     node *temp = head;
     int initialpos = 1;
-    node *nextPos;
-
     while (initialpos < position - 1)
     {
         initialpos++;
         temp = temp->next;
     }
+    if(temp->next == NULL){
+        insertAtEnd(newdata,head);
+        return;
+    }
+    newNode->prev = temp;
     newNode->next = temp->next;
+    temp->next->prev = newNode;
     temp->next = newNode;
 }
 
-
+/*
 // DELETION
 void deletePos(int position, node* &head){
     node* currNode = head;
@@ -135,31 +143,24 @@ void deletePos(int position, node* &head){
 int main()
 {
     cout << "\n\n";
-    /*
+
     node *head = new node(30);
+    lengthDll(head);
     insertAtBeg(20, head);
     insertAtBeg(10, head);
     insertAtEnd(40, head);
-    printLL(head);
+    printDll(head);
+    // lengthDll(head);
 
-    cout << "\nInserting 99 at 3\n";
-    insertAtPosition(99, head, 3);
-    printLL(head);
+    cout << "\nInserting 99 at 5\n";
+    insertAtPosition(99, head, 5);
+    printDll(head);
 
+    /*
     cout << "\nDeleting node at 3\n";
     deletePos(3, head);
     printLL(head);
     */
-
-    myclass obj1;
-    cout<<"Age of obj1 = "<<obj1.age<<endl;
-    cout<<"FavChar of obj1 = "<<obj1.favVhar<<endl;
-
-    class2* obj2 = new class2;
-    obj2->age = 30;
-    cout<<"Age of obj2 = "<<obj2->age<<endl;
-    cout<<"FavChar of obj2 = "<<obj2->favVhar<<endl;
-    delete obj2;
 
     cout << "\n\n";
     return 0;
