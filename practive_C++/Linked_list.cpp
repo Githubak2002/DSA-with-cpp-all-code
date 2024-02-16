@@ -41,13 +41,6 @@ void printLL(node *head)
     cout << temp->data << "->"<< "NULL" << endl;
 }
 
-void insertAtBeg(int newdata, node *&head)
-{
-    node *temp = new node(newdata);
-    temp->next = head;
-    head = temp;
-}
-
 void insertAtEnd(int newdata, node *&head)
 {
     node *newNode = new node(newdata);
@@ -56,6 +49,13 @@ void insertAtEnd(int newdata, node *&head)
         tailNode = tailNode->next;
     cout << "\nTail node data " << tailNode->data << endl;
     tailNode->next = newNode;
+}
+
+void insertAtBeg(int newdata, node *&head)
+{
+    node *temp = new node(newdata);
+    temp->next = head;
+    head = temp;
 }
 
 void insertAtPosition(int newdata, node *&head, int position)
