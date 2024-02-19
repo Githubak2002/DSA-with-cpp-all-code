@@ -49,66 +49,8 @@ void addAtEnd(ListNode *&head, int newData)
   current->next = newNode;
 }
 
-ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
-{
-  ListNode *result = nullptr;
-  int sum=0,rem=0,carry = 0;
-  while(l1 != NULL && l2 != NULL ){
-    sum = 0;  rem = 0;
-    sum = l1->val + l2->val + carry;
-    if(sum%10 != sum){
-      rem = sum%10;
-      carry = 1;
-      addAtEnd(result,rem);
-    }
-    else{
-      carry = 0;
-      addAtEnd(result,sum);
-    }
-    l1 = l1->next;
-    l2 = l2->next;
-  }
-
-  while(l1 != NULL){
-    // if(carry == 1)
-    sum = carry+l1->val;
-
-    if(sum%10 != sum){
-      rem = sum%10;
-      carry = 1;
-      addAtEnd(result,rem);
-    }
-    else{
-      carry = 0;
-      addAtEnd(result,sum);
-    }
-    l1 = l1->next;
-  }
-
-  while(l2 != NULL){
-    // if(carry == 1)
-    sum = carry+l2->val;
-
-    if(sum%10 != sum){
-      rem = sum%10;
-      carry = 1;
-      addAtEnd(result,rem);
-    }
-    else{
-      carry = 0;
-      addAtEnd(result,sum);
-    }
-    l2 = l2->next;
-  }
-
-  if(carry == 1)
-    addAtEnd(result,1);
-
-  return result;
-}
-
 bool hasCycle(ListNode *head){
-  
+  // Fast and slow concept
 }
 
 int main()
