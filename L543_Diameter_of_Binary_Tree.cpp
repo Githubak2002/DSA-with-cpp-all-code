@@ -1,7 +1,9 @@
 // 543. Diameter of Binary Tree
 
 #include <iostream>
+#include <algorithm>
 #include <queue>
+#include <typeinfo>
 using namespace std;
 
 class TreeNode
@@ -73,21 +75,23 @@ void levelOrderTraversal(TreeNode *root)
   }
 }
 
-int diameterOfBinaryTree(TreeNode* root) {
-  int m1=0,m2=0;
-
+int diameterOfBinaryTree(TreeNode *root)
+{
+  int m1 = 0, m2 = 0;
 }
 
-int height(TreeNode* root){
-  if(root == NULL)
+int height(TreeNode *root)
+{
+  if (root == NULL)
     return 0;
-  
+
   int h1 = height(root->left);
   int h2 = height(root->right);
 
-  int ans =  max(h1,h2);
-  return ans+1;
+  int ans = max(h1, h2);
+  return ans + 1;
 }
+
 
 int main()
 {
@@ -105,13 +109,20 @@ int main()
   n1->left = n3;
   n1->right = n4;
 
-  cout << "Level orerd traversal of 1st tree" << endl;
-  levelOrderTraversal(root);
-  cout << "\n\n";
+  // cout << "Level orerd traversal of 1st tree" << endl;
+  // levelOrderTraversal(root);
+  // cout << "\n\n";
 
-  cout<<"height = "<<height(root)<<endl;
+  // cout << "height = " << height(root) << endl;
 
-
+  string s1 = "10101";
+  string s2 = "11111";
+  string a = addBinary(s1,s2);
+  cout<<"sum of s1 + s2 = "<<a<<endl;
+  // string c = "1101";
+  // int bn1 = c[0] - '0';
+  // cout << "n1 = " << bn1 << endl;
+  // cout << "type of n1 = " << typeid(bn1).name() << endl;
   cout << "\n\n";
   return 0;
 }

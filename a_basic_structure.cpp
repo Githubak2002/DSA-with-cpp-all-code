@@ -1,5 +1,6 @@
 // 263. Ugly Number
 
+#include<bits/stdc++.h>
 #include<iostream>
 #include<vector>
 // #include<algorithm>
@@ -7,6 +8,7 @@ using namespace std;
 
 int main(){
   cout << "\n\n=======================\n\n";
+
 
   cout << "\n\n=======================";
   return 0;
