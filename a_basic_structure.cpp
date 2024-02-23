@@ -3,6 +3,7 @@
 #include<bits/stdc++.h>
 #include<iostream>
 #include<vector>
+// #include<cmath>            // pow(x,n);
 // #include<algorithm>
 using namespace std;
 
@@ -13,8 +14,6 @@ int main(){
   cout << "\n\n=======================";
   return 0;
 }
-
-// sort(arr.begin(), arr.end());
 
 // print arr ele
 void printarray(vector<int> arr){
@@ -43,6 +42,11 @@ char toLowerCaseFun(char ch){
     return ch+32;
 }
 
+// sort(arr.begin(), arr.end());
+
+// char ch = '1';   int n = ch - '0';   // cout<<n;  n = 1
+
+// vector<int> ans (6,0);      // ans = {0,0,0,0,0,0}
 
 // string str;
 // cout<<"enter a string"<<endl;
