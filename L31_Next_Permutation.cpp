@@ -1,4 +1,4 @@
-// L31. Next Permutation
+// L31. Next Permutation - Finding a no just greater than given no [using same digits]
 
 #include <bits/stdc++.h>
 #include <iostream>
@@ -44,7 +44,7 @@ int main()
   cout << "\n\n=======================\n\n";
 
   vector<int> arr2 = {3, 2, 1}, arr1 = {6, 2, 7, 4, 3, 2, 1}, arr4={1, 3, 2}, arr={2, 1, 5, 4, 3, 0, 0};
-
+  cout<<"Finding a no just greater than given no [using same digits]\n";
   cout << "Initial arr" << endl;
   printarray(arr);
   cout << "Next permutation" << endl;
