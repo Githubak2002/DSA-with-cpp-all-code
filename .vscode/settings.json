@@ -43,6 +43,13 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "forward_list": "cpp",
+    "unordered_set": "cpp",
+    "future": "cpp",
+    "shared_mutex": "cpp",
+    "thread": "cpp",
+    "regex": "cpp",
+    "valarray": "cpp"
   }
 }

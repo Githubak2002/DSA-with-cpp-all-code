@@ -52,6 +52,8 @@ char toLowerCaseFun(char ch)
 
 // vector<int> ans (6,0);      // ans = {0,0,0,0,0,0}
 
+//  vector<int> arr = {1,2,3};   cout<<"first ele "<<*arr.begin();
+
 // string str;
 // cout<<"enter a string"<<endl;
 // getline(cin,str);
