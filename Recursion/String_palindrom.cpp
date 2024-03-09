@@ -30,17 +30,29 @@ bool isPalindrom(string s, int i)
     return false;
   return isPalindrom(s, ++i);
   // isPalindrom(s, ++i);
-
 }
 
+// Nth FIBONACII NO - 0th index
+int fibonacii(int n)
+{
+  if (n <= 1)
+    return n;
+
+  int last = fibonacii(n - 1);        // first called
+  int second_last = fibonacii(n - 2); // second called
+  return last + second_last;
+
+}
 int main()
 {
   cout << "\n\n";
 
   string s = "abcdcba";
   int len = s.length();
-  cout << "is " << s << " palindrom = " << isPalindrom(s, 0) << endl;
+  cout << "is '" << s <<"' palindrom = " << isPalindrom(s, 0) << endl;
 
+  int nth = 5;
+  cout<<nth<<" Fibonacci no is = "<<fibonacii(nth)<<endl;
   cout << "\n\n";
   return 0;
 }

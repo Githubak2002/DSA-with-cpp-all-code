@@ -55,10 +55,6 @@ void reverseArr(int arr[],int start,int end){
   reverseArr(arr,start+1,end-1);
 }
 
-// CHECK IF STRING IS PALINDROM 
-bool isPalindrom(string s,int len){
-
-}
 
 int main()
 {
@@ -70,8 +66,6 @@ int main()
   reverseArr(arr,0,4);
   for(int  i = 0; i < 5; i++)
       cout<<arr[i]<<" ";
-  
-  
 
 
   
