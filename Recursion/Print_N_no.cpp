@@ -48,6 +48,8 @@ int returnSumOfN(int n){
 
 // REVERSE AN ARRAY
 void reverseArr(int arr[],int start,int end){
+  // void reverseArr(int arr[],int start,int n){
+  // if(start >= n/2) return
   if(start >= end)
     return;
 
@@ -66,6 +68,7 @@ int main()
   reverseArr(arr,0,4);
   for(int  i = 0; i < 5; i++)
       cout<<arr[i]<<" ";
+
 
 
   

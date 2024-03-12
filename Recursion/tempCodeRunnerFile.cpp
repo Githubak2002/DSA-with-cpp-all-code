@@ -1,8 +1,7 @@
-tor<int> reverseArr(vector<int> arr,int len,vector<int> ans){
-//   if(len == 0)
-//     return ;
+void reverseArr(int arr[],int start,int end){
+  if(start >= end)
+    return;
 
-
-//   swap(arr.begin(),arr.end());
-
-// }
+  swap(arr[start],arr[end]);
+  reverseArr(arr,start+1,end-1);
+}
